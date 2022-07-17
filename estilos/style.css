@@ -385,11 +385,20 @@ body::-webkit-scrollbar-thumb {
 .rodape .positionFooter .positionTituloRedes {}
 
 .rodape .positionFooter .positionTituloRedes h3 {
-    width: 200px;
     color: var(--cor1);
+    font-weight: normal;
 }
 
-.rodape .positionFooter .positionTituloRedes img {}
+.rodape .positionFooter .positionTituloRedes h3 a {
+    color: var(--cor1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rodape .positionFooter .positionTituloRedes h3 a:hover {
+    text-decoration: underline;
+}
+
 
 @media screen and (max-width: 965px) {
 
@@ -439,6 +448,20 @@ body::-webkit-scrollbar-thumb {
 
     .cabecalho .positionHeader .barraPesquisar {
         margin-right: 2rem;
+    }
+
+    .rodape .positionFooter {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-direction: column;
+    }
+
+    .rodape .positionFooter .listaCreditos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
     }
 }
 
