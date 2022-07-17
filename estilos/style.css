@@ -1,7 +1,9 @@
 @charset "UTF-8";
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 /* PALETA DE CORES */
 :root {
     --cor0: #ffffff;
@@ -38,7 +40,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-    width: 900px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -58,6 +60,33 @@ body::-webkit-scrollbar-thumb {
 .cabecalho .positionHeader > img {
     width: 100px;
     cursor: pointer;
+}
+
+/* BOTÃO MOBILE */
+.cabecalho .positionHeader #btn {
+    display: none;
+}
+
+.cabecalho .positionHeader .check-btn {}
+
+.cabecalho .positionHeader .check-btn .fa {
+    font-size: 2.40em;
+    left: 90%;
+    top: 6%;
+    position: absolute;
+    color: white;
+    display: none;
+}
+
+.cabecalho .positionHeader .check-btn .fa-solid {
+    font-size: 2em;
+    right: 0.5rem;
+    top: 1%;
+    position: fixed;
+    transition: all .5s;
+    color: white;
+    z-index: 2;
+    opacity: 0;
 }
 
 .cabecalho .positionHeader .menu {
@@ -81,35 +110,25 @@ body::-webkit-scrollbar-thumb {
     transition: .5s;
 }
 
-.cabecalho .positionHeader .menu .barraPesquisar {
+.cabecalho .positionHeader .barraPesquisar {
     position: relative;
+    /* margin-right: 2rem; */
 }
 
-.cabecalho .positionHeader .menu .barraPesquisar svg {
+.cabecalho .positionHeader .barraPesquisar svg {
     width: 20px;
     position: absolute;
     left: 5%;
     color: var(--cor5);
     top: 18%;
 }
-.cabecalho .positionHeader .menu .barraPesquisar svg:hover {
+.cabecalho .positionHeader .barraPesquisar svg:hover {
     cursor: pointer;
 }
 
-.cabecalho .positionHeader .menu .barraPesquisar input {
+.cabecalho .positionHeader .barraPesquisar input {
     padding: 10px 0px 10px 43px;
     border-radius: 6px;
-}
-
-
-@media (max-width: 940px) and (min-width: 800px) {
-    nav {
-        width: 652px;
-    }
-
-    .listaJogos {
-        width: 400px;
-    }
 }
 
 /* SEÇÃO BANNER */
@@ -156,6 +175,7 @@ body::-webkit-scrollbar-thumb {
     flex-wrap: wrap;
     gap: 33px;
     list-style: none;
+    justify-content: center;
 }
 
 .secaoNovoLancamento .listaJogos .jogo {
@@ -186,7 +206,7 @@ body::-webkit-scrollbar-thumb {
 .secaoAnuncio {
     background-color: var(--cor4);
     margin: 15px -15px 0px -15px;
-    padding: 20px 0px;
+    padding: 20px;
 }
 
 .secaoAnuncio h1 {
@@ -228,20 +248,14 @@ body::-webkit-scrollbar-thumb {
 .secaoPlano .listaPlanos {
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    gap: 338px;
+    justify-content: center;
     margin: 30px 0px;
-    position: relative;
-}
-
-#planoEspecial {
-    position: absolute;
-    top: 50%;
-    left: 33%;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .secaoPlano .listaPlanos .itemPlano {
-    width: 33%;
+    width: 18rem;
     background-color: rgb(230, 230, 230);
     padding: 15px;
     border-radius: 10px;
@@ -312,11 +326,10 @@ body::-webkit-scrollbar-thumb {
 .secaoPlano button {
     margin: auto;
     display: block;
-    margin-top: 275px;
     background-color: var(--cor1);
     color: white;
     font-weight: bold;
-    padding: 10px;
+    padding: 0.9rem;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.233);
@@ -377,3 +390,70 @@ body::-webkit-scrollbar-thumb {
 }
 
 .rodape .positionFooter .positionTituloRedes img {}
+
+@media screen and (max-width: 965px) {
+
+    .cabecalho .positionHeader  {
+        justify-content: space-around;
+    }
+
+    .cabecalho .positionHeader .check-btn .fa {
+        display: block;
+        cursor: pointer;
+    }
+
+    .positionHeader #btn:checked ~ .menu {
+        right: 0;
+    }
+    
+    .positionHeader #btn:checked ~ .check-btn .fa-solid {
+        opacity: 1;
+    }
+
+    .cabecalho .positionHeader .menu {
+        position: fixed;
+        top: 400px;
+        background-color: var(--cor3);
+        flex-direction: column;
+        right: -100%;
+        top: 0;
+        z-index: 1;
+        transition: all .5s;
+        width: 20rem;
+        padding: 1rem 0;
+        height: 100vh;
+        gap: 0;
+    }
+
+    .cabecalho .positionHeader .menu a {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid var(--cor5);
+    }
+
+    .cabecalho .positionHeader .menu a:hover {
+        background-color: var(--cor5);
+        color: var(--cor3);
+        border-radius: 0px;
+    }
+
+    .cabecalho .positionHeader .barraPesquisar {
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (max-width: 410px) {
+
+    .cabecalho {
+        min-height: 97px;
+    }
+
+    .cabecalho .positionHeader > img {
+        width: 70px;
+    }
+
+    .cabecalho .positionHeader .check-btn .fa {
+        top: 4.4%;
+    }
+
+}
