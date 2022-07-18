@@ -79,7 +79,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cabecalho .positionHeader .check-btn .fa-solid {
-    font-size: 2em;
+    font-size: 2.5em;
     right: 0.5rem;
     top: 1%;
     position: fixed;
@@ -465,18 +465,26 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 450px) {
 
     .cabecalho {
-        min-height: 97px;
+        min-height: 90px;
+    }
+
+    .cabecalho .positionHeader {
+        justify-content: space-between;
     }
 
     .cabecalho .positionHeader > img {
-        width: 70px;
+        width: 65px;
     }
 
     .cabecalho .positionHeader .check-btn .fa {
         top: 4.4%;
+    }
+
+    .cabecalho .positionHeader .barraPesquisar {
+        margin-right: 3rem;
     }
 
 }
